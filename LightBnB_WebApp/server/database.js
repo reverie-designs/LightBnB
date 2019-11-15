@@ -163,14 +163,10 @@ const addProperty = function(property) {
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
   RETURNING *;`
   ;
-  console.log(queryString);
+ 
  // console.log('THIS IS RESULT', result);
   return pool.query(queryString, values)
     .then(res => res.rows);
 
-  // const propertyId = Object.keys(properties).length + 1;
-  // property.id = propertyId;
-  // properties[propertyId] = property;
-  // return Promise.resolve(property);
 };
 exports.addProperty = addProperty;
